@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { readAllConfigs } from './utils/configs';
-import App from './App';
+import App from './components/App';
 // import reportWebVitals from './reportWebVitals';
 
-import './styles/index.css';
+import './styles/index.scss';
 
 readAllConfigs();
 

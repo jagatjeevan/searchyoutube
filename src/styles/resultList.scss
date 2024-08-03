@@ -1,0 +1,38 @@
+.list {
+  border: var(--app-border);
+  margin: 0 10px 10px 0;
+  padding: 5px;
+  border-radius: var(--app-border-radius);
+
+  a {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 120px 1fr;
+    align-items: center;
+    color: var(--app-foreground-color);
+    text-decoration: none;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  img {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    border-radius: var(--app-border-radius);
+  }
+
+  .more-info {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    justify-self: end;
+    font-size: 0.7em;
+    font-weight: normal;
+    color: lighten(#fff, 15%);
+
+    span {
+      margin-right: 15px;
+    }
+  }
+}
