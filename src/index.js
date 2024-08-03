@@ -5,7 +5,7 @@ import { readAllConfigs } from './utils/configs';
 import App from './App';
 // import reportWebVitals from './reportWebVitals';
 
-import './index.css';
+import './styles/index.css';
 
 readAllConfigs();
 

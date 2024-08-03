@@ -9,7 +9,7 @@ function App() {
   const [value, setValue] = useState('');
   const [autoCompleteList, setAutoCompleteList] = useState({});
 
-  const fetchResults = async () => {
+  const fetchResults = async (value) => {
     const result = await fetch(
       `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${value}&key=${key}`,
     );
@@ -21,10 +21,10 @@ function App() {
   const handleSubmit = useMemo(() => {
     return async (e) => {
       e.preventDefault();
-      const { pageInfo, items } = await fetchResults();
+      const { pageInfo, items } = await fetchResults(value);
       setAutoCompleteList({ pageInfo, items });
     };
-  }, []);
+  }, [value]);
 
   return (
     <>
