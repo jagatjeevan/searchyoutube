@@ -38,7 +38,9 @@ export default function ResultList(props) {
       <div className="results-header">
         <h1>Result List for : {searchedFor}</h1>
         <span>
-          Showing {items.length} / {totalResults}
+          Showing
+          <span data-testid="showing-records-length">{items.length}</span> /
+          <span data-testid="total-records-length">{totalResults}</span>
         </span>
       </div>
       {showList()}
