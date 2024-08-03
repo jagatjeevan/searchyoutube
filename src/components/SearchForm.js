@@ -7,8 +7,8 @@ export default function SearchForm(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { pageInfo, items, nextPageToken } = await fetchRecords(value);
-    props.setAutoCompleteList({ pageInfo, items, nextPageToken });
+    const { pageInfo, items, nextPageToken, prevPageToken } = await fetchRecords(value);
+    props.setAutoCompleteList({ pageInfo, items, nextPageToken, prevPageToken });
     props.setValue(value);
   };
 

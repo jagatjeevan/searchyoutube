@@ -20,8 +20,10 @@ export default function ResultList(props) {
               height={thumbnails.height}
               alt={item.snippet.title}
             />
-            <strong>{item.snippet.title}</strong>
-            <p>{item.snippet.description}</p>
+            <div>
+              <strong>{item.snippet.title}</strong>
+              <p>{item.snippet.description}</p>
+            </div>
             <strong className="more-info">
               <span>Channel : {channelTitle}.</span> Published on : {publishTime}
             </strong>

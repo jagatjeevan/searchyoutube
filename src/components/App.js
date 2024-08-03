@@ -1,34 +1,43 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { fetchRecords } from '../actions/fetchRecords';
 import logo from '../assets/logo.png';
 import useScrollToBottom from '../hooks/useScrollToBottom';
 import ResultList from './ResultList';
 import SearchForm from './SearchForm';
 
 import '../styles/app.scss';
-import { fetchRecords } from '../actions/fetchRecords';
 
 function App() {
   const [autoCompleteList, setAutoCompleteList] = useState({});
   const [value, setValue] = useState('');
+  const [shouldFetchData, setShouldFetchData] = useState(true);
   const containerRef = useRef(null);
   const isAtBottom = useScrollToBottom(containerRef);
 
-  useEffect(async () => {
-    if (autoCompleteList.items?.length && isAtBottom) {
-      console.log('should trigger fetch');
-      const { pageInfo, items, nextPageToken } = await fetchRecords(
-        value,
-        autoCompleteList.nextPageToken,
-      );
-      setAutoCompleteList({
-        ...autoCompleteList,
-        pageInfo,
-        items: [...autoCompleteList.items, ...items],
-        nextPageToken,
-      });
-    }
-  }, [autoCompleteList, isAtBottom]);
+  useEffect(() => {
+    const fetchMoreRecords = async () => {
+      if (autoCompleteList.items?.length && isAtBottom && shouldFetchData) {
+        setShouldFetchData(false);
+        const { pageInfo, items, nextPageToken, prevPageToken } = await fetchRecords(
+          value,
+          autoCompleteList.nextPageToken,
+        );
+        setAutoCompleteList({
+          ...autoCompleteList,
+          pageInfo,
+          items: [...autoCompleteList.items, ...items],
+          nextPageToken,
+          prevPageToken,
+        });
+        setTimeout(() => {
+          setShouldFetchData(true);
+        }, 10);
+      }
+    };
+
+    fetchMoreRecords();
+  }, [autoCompleteList, isAtBottom, shouldFetchData, value]);
 
   return (
     <article className="container">

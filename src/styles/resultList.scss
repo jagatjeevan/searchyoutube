@@ -6,7 +6,7 @@
 
   a {
     display: grid;
-    gap: 15px;
+    gap: 5px 15px;
     grid-template-columns: 120px 1fr;
     align-items: center;
     color: var(--app-foreground-color);
@@ -14,7 +14,7 @@
   }
 
   p {
-    margin: 0;
+    margin: 10px 0;
   }
 
   img {
