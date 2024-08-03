@@ -1,24 +1,13 @@
 import { useState } from 'react';
 
-import { getConfig } from '../utils/configs';
+import { fetchRecords } from '../actions/fetchRecords';
 
 export default function SearchForm(props) {
-  const key = getConfig('apiKey');
-
   const [value, setValue] = useState('');
-
-  const fetchResults = async (value) => {
-    const result = await fetch(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${value}&key=${key}`,
-    );
-    const data = await result.json();
-    console.log('Data fetched is ', data);
-    return data;
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { pageInfo, items } = await fetchResults(value);
+    const { pageInfo, items } = await fetchRecords(value);
     props.setAutoCompleteList({ pageInfo, items });
     props.setValue(value);
   };
