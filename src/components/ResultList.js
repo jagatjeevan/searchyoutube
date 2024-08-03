@@ -3,6 +3,7 @@ import '../styles/resultList.scss';
 export default function ResultList(props) {
   const { listData, searchedFor } = props;
   const { pageInfo, items } = listData;
+  const { totalResults } = pageInfo;
 
   const showList = () => {
     return items.map((item) => {
@@ -32,7 +33,12 @@ export default function ResultList(props) {
 
   return (
     <>
-      <h1>Result List for : {searchedFor}</h1>
+      <div className="results-header">
+        <h1>Result List for : {searchedFor}</h1>
+        <span>
+          Showing {items.length} / {totalResults}
+        </span>
+      </div>
       {showList()}
     </>
   );

@@ -36,3 +36,18 @@
     }
   }
 }
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    margin: 10px 0;
+  }
+
+  span {
+    margin-right: 10px;
+    font-size: 0.8rem;
+  }
+}

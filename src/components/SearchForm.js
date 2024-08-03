@@ -7,8 +7,8 @@ export default function SearchForm(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { pageInfo, items } = await fetchRecords(value);
-    props.setAutoCompleteList({ pageInfo, items });
+    const { pageInfo, items, nextPageToken } = await fetchRecords(value);
+    props.setAutoCompleteList({ pageInfo, items, nextPageToken });
     props.setValue(value);
   };
 
@@ -29,7 +29,7 @@ export default function SearchForm(props) {
         value="Clear"
         onClick={() => {
           setValue('');
-          props.setAutoCompleteList([]);
+          props.setAutoCompleteList({});
         }}
       />
     </form>

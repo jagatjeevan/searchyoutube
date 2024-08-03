@@ -6,6 +6,7 @@ import ResultList from './ResultList';
 import SearchForm from './SearchForm';
 
 import '../styles/app.scss';
+import { fetchRecords } from '../actions/fetchRecords';
 
 function App() {
   const [autoCompleteList, setAutoCompleteList] = useState({});
@@ -13,9 +14,19 @@ function App() {
   const containerRef = useRef(null);
   const isAtBottom = useScrollToBottom(containerRef);
 
-  useEffect(() => {
+  useEffect(async () => {
     if (autoCompleteList.items?.length && isAtBottom) {
       console.log('should trigger fetch');
+      const { pageInfo, items, nextPageToken } = await fetchRecords(
+        value,
+        autoCompleteList.nextPageToken,
+      );
+      setAutoCompleteList({
+        ...autoCompleteList,
+        pageInfo,
+        items: [...autoCompleteList.items, ...items],
+        nextPageToken,
+      });
     }
   }, [autoCompleteList, isAtBottom]);
 
