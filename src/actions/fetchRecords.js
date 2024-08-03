@@ -16,7 +16,5 @@ export async function fetchRecords(value, nextPageToken = null) {
     },
   });
 
-  console.log(response.data);
-
   return response.data;
 }

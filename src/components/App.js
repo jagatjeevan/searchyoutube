@@ -45,7 +45,7 @@ function App() {
         <img src={logo} alt="logo" />
         <SearchForm setAutoCompleteList={setAutoCompleteList} setValue={setValue} />
       </section>
-      <section className="list-container" ref={containerRef}>
+      <section className="list-container" ref={containerRef} data-testid="resultList">
         {autoCompleteList.items && <ResultList listData={autoCompleteList} searchedFor={value} />}
       </section>
     </article>

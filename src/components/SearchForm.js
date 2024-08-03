@@ -13,7 +13,7 @@ export default function SearchForm(props) {
   };
 
   return (
-    <form method="get" onSubmit={handleSubmit}>
+    <form method="get" onSubmit={handleSubmit} aria-label="search-youtube">
       <input
         name="search_query"
         type="text"
