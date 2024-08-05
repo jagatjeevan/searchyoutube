@@ -1,3 +1,10 @@
+## Reviewer Instructions
+If you are reviewing this submission, then you can do so in two ways
+
+* Look at the changes in [this pull request](https://github.com/equalexperts-assignments/equal-experts-easygoing-influential-amazing-purpose-d71c27b0ed52/pull/1)
+* Browse the code on Github
+    
+
 ## :warning: Please read these instructions carefully and entirely first
 * Clone this repository to your local machine.
 * Use your IDE of choice to complete the assignment.
