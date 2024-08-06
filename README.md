@@ -1,17 +1,19 @@
 ## Reviewer Instructions
+
 If you are reviewing this submission, then you can do so in two ways
 
-* Look at the changes in [this pull request](https://github.com/equalexperts-assignments/equal-experts-easygoing-influential-amazing-purpose-d71c27b0ed52/pull/1)
-* Browse the code on Github
-    
+- Look at the changes in [this pull request](https://github.com/equalexperts-assignments/equal-experts-easygoing-influential-amazing-purpose-d71c27b0ed52/pull/1)
+- Browse the code on Github
 
 ## :warning: Please read these instructions carefully and entirely first
-* Clone this repository to your local machine.
-* Use your IDE of choice to complete the assignment.
-* When you have completed the assignment, you need to  push your code to this repository and [mark the assignment as completed by clicking here](https://app.snapcode.review/submission_links/af046d19-3265-4a62-813a-c0c93ddaee26).
-* Once you mark it as completed, your access to this repository will be revoked. Please make sure that you have completed the assignment and pushed all code from your local machine to this repository before you click the link.
+
+- Clone this repository to your local machine.
+- Use your IDE of choice to complete the assignment.
+- When you have completed the assignment, you need to push your code to this repository and [mark the assignment as completed by clicking here](https://app.snapcode.review/submission_links/af046d19-3265-4a62-813a-c0c93ddaee26).
+- Once you mark it as completed, your access to this repository will be revoked. Please make sure that you have completed the assignment and pushed all code from your local machine to this repository before you click the link.
 
 ## Building and running the app
+
 In the project directory, you can run:
 
 `npm install && npm start`
@@ -26,19 +28,21 @@ To run tests
 
 `npm test`
 
-
 ## Problem Statement
-Create a page where the user can search for a video using the YouTubeAPI. 
+
+Create a page where the user can search for a video using the YouTubeAPI.
 Web app should let users:
-* Search for videos via keywords.
-* It should show a list of matching results with video image/thumbnail and title of the video (Feelfree to add more info).
-* It should also have infinite scrolling.
-* Feel free to make it awesome by using your creativity.
+
+- Search for videos via keywords.
+- It should show a list of matching results with video image/thumbnail and title of the video (Feelfree to add more info).
+- It should also have infinite scrolling.
+- Feel free to make it awesome by using your creativity.
 
 #### Youtube API
-* Visit: https://developers.google.com/youtube/v3
-* Use your google account to get the API key
-* Docs: https://developers.google.com/youtube/v3/docsRules: 
+
+- Visit: https://developers.google.com/youtube/v3
+- Use your google account to get the API key
+- Docs: https://developers.google.com/youtube/v3/docsRules:
 
 ## What we are looking for:
 
@@ -55,5 +59,3 @@ Web app should let users:
 #### How do I submit ?
 
 When you are done with the solution and have pushed it to the repo, [you can submit the assignment here](https://app.snapcode.review/submission_links/af046d19-3265-4a62-813a-c0c93ddaee26)
-
-
